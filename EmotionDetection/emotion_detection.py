@@ -28,7 +28,7 @@ def emotion_detector(text_to_analyse):  # Define a function named emotion_detect
         sadness_score = None
         fear_score = None
         disgust_score = None
-        dominant_emotion = None
+        dominant_emotion = "test1"
         #return response.status_code
         return {'anger': anger_score, 'disgust': disgust_score, 'fear': fear_score,'joy': joy_score,'sadness': sadness_score, 
         'Dominant_Emotion': dominant_emotion } # Return the response text from the API
@@ -41,7 +41,7 @@ def emotion_detector(text_to_analyse):  # Define a function named emotion_detect
         sadness_score = None
         fear_score = None
         disgust_score = None
-        dominant_emotion = None
+        dominant_emotion = "test2"
         #return response.status_code
         return {'anger': anger_score, 'disgust': disgust_score, 'fear': fear_score,'joy': joy_score,'sadness': sadness_score, 
         'Dominant_Emotion': dominant_emotion } # Return the response text from the API
