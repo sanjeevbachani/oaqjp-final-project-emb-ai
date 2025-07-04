@@ -8,24 +8,22 @@ def emo_detector():
     # Pass the text to the emotion_detector function and store the response
     response = emotion_detector(text_to_analyze)
     # Return a formatted string with the sentiment label and score
+    
     anger_score = response['anger']
     joy_score = response['joy']
     sadness_score = response['sadness']
     disgust_score = response['disgust']
     fear_score = response['fear']
     dom_emotion = response['dominant_emotion']
-    #dominant_emotion="test"
     # Return a formatted string with the sentiment label and score
-    formatted_string = f"For the given <br>statement, the system <br>response is 'anger' : <br>{anger_score}, 'disgust' : <br>{disgust_score}, 'fear' : <br>{fear_score}, 'joy' : <br>{joy_score} and <br>'sadness' : {sadness_score}. <br>The dominant emotion is <br><b>{dom_emotion}</b>"
+    formatted_string = f"For the given statement, the system response is 'anger' : {anger_score}, 'disgust' : {disgust_score}, 'fear' : {fear_score}, 'joy' : {joy_score} and 'sadness' : {sadness_score}. <br>The dominant emotion is <b>{dom_emotion}</b>"
     if dom_emotion is None:
         return "Invalid Text! Please try again!"
     else:
-        #return response
-        #return text_to_analyze
         return formatted_string
-        #return default_emotion
+        
 @app.route("/")
 def render_index_page():
     return render_template('index.html')
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5003)
+    app.run(host="0.0.0.0", port=5000)

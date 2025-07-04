@@ -16,34 +16,16 @@ def emotion_detector(text_to_analyse):  # Define a function named emotion_detect
         fear_score = emotion_scores['fear']   # Access specific emotion values
         disgust_score = emotion_scores['disgust']   # Access specific emotion values
         dominant_emotion = max(emotion_scores, key=emotion_scores.get)
-        #return response.status_code
         return {'anger': anger_score, 'disgust': disgust_score, 'fear': fear_score,'joy': joy_score,'sadness': sadness_score, 
-        'dominant_emotion': dominant_emotion } # Return the response text from the API
-    elif response.status_code == 400:
-        #emotion_predictions_list = formatted_response['emotionPredictions'] # Access the 'emotionPredictions' key:
-        #first_prediction = emotion_predictions_list[0]
-        emotion_scores = None
-        anger_score = None
-        joy_score = None
-        sadness_score = None
-        fear_score = None
-        disgust_score = None
-        dominant_emotion = "test1"
-        #return response.status_code
-        return {'anger': anger_score, 'disgust': disgust_score, 'fear': fear_score,'joy': joy_score,'sadness': sadness_score, 
-        'Dominant_Emotion': dominant_emotion } # Return the response text from the API
-    elif response.status_code == 500:
-        #emotion_predictions_list = formatted_response['emotionPredictions'] # Access the 'emotionPredictions' key:
-        #first_prediction = emotion_predictions_list[0]
-        emotion_scores = None
-        anger_score = None
-        joy_score = None
-        sadness_score = None
-        fear_score = None
-        disgust_score = None
-        dominant_emotion = "test2"
-        #return response.status_code
-        return {'anger': anger_score, 'disgust': disgust_score, 'fear': fear_score,'joy': joy_score,'sadness': sadness_score, 
-        'Dominant_Emotion': dominant_emotion } # Return the response text from the API
-    #return response.status_code
-    
+       'dominant_emotion': dominant_emotion } # Return the response text from the API
+    elif response.status_code == 400:#If the response status code is 400, ereturn None
+        
+         emotion_scores = None
+         anger_score = None
+         joy_score = None
+         sadness_score = None
+         fear_score = None
+         disgust_score = None
+         dominant_emotion = None
+         return {'anger': anger_score, 'disgust': disgust_score, 'fear': fear_score,'joy': joy_score,'sadness': sadness_score,    
+                 'dominant_emotion': dominant_emotion } # Return the response text from the API
